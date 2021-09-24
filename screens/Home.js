@@ -5,6 +5,7 @@ import Categories from '../components/Categories'
 import HeaderTabs from '../components/HeaderTabs'
 import RestaurantItem, { localRestaurant } from '../components/RestaurantItem'
 import SearchBar from '../components/SearchBar'
+import TopTabs from '../components/TopTabs'
 
 const YELP_API_KEY = "NJhlX_R0eEnlk57gW0SGO1SHQqyZhdYBgfu8aM0mKCyq0r3S6gqWn4eUjnYPeKpjB18gRP4yU-Kpt1DMqy-qjaGyR11CL-JL7g-eYNdq-KqY-E4kzpEIN4nG6LtNYXYx"
 
@@ -38,6 +39,11 @@ export default function Home() {
 
     return (
         <SafeAreaView style={tailwind`bg-gray-900 pt-12`}>
+            <View>
+                <TopTabs />
+                {/* <Divider width={1} /> */}
+
+            </View>
             <View style={tailwind`bg-gray-900 p-3 pb-4`}>
                 <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
                 <SearchBar setCity={setCity} />
