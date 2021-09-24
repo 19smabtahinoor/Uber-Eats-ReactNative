@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
+import tailwind from 'tailwind-react-native-classnames';
 
 export default function HeaderTabs() {
     const [activeTab, setActiveTab] = useState('Delivery');
 
     return (
-        <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+        <View style={tailwind`flex flex-row justify-center`}>
             <HeaderButton
                 btnText="Delivery"
                 activeTab={activeTab}
@@ -16,23 +17,17 @@ export default function HeaderTabs() {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
             />
-        </View> 
+        </View>
     )
 }
 
 const HeaderButton = (props) => {
     return (
-        <TouchableOpacity style={{
-            backgroundColor: props.activeTab === props.btnText ? 'black' : 'white',
-            paddingVertical: 6,
-            paddingHorizontal: 16,
-            borderRadius: 30,
-            marginHorizontal:5
-        }}
+        <TouchableOpacity style={tailwind`${props.activeTab === props.btnText ? 'bg-yellow-500' : 'bg-gray-700'} rounded-xl px-3 py-2 mr-2`}
             onPress={() => props.setActiveTab(props.btnText)}
         >
             <Text style={{
-                color: props.activeTab === props.btnText ? 'white' : 'black',
+                color: props.activeTab === props.btnText ? 'white' : 'gray',
                 fontSize: 15,
             }}>
                 {props.btnText}
@@ -40,9 +35,3 @@ const HeaderButton = (props) => {
         </TouchableOpacity>
     )
 }
-
-
-
-const styles = StyleSheet.create({
-
-})

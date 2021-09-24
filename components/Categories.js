@@ -1,5 +1,7 @@
 import React from 'react';
 import { Image, ScrollView, Text, View } from 'react-native';
+import tailwind from 'tailwind-react-native-classnames';
+
 const items = [
     {
         image: require("../assets/images/shopping-bag.png"),
@@ -33,20 +35,16 @@ const items = [
 
 export default function Categories() {
     return (
-        <View style={{
-            backgroundColor:'#fff',
-            paddingVertical:10,
-            paddingLeft:20
-        }}>
+        <View style={tailwind`bg-gray-700 mx-2 rounded-lg p-4`}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {items.map(item => (
-                    <View style={{ alignItems: 'center', marginRight: 30 }} key={Math.random()}>
+                    <View style={tailwind`flex items-center mr-6`} key={Math.random()}>
                         <Image source={item.image} style={{
                             width: 50,
                             height: 40,
                             resizeMode: 'contain'
                         }} />
-                        <Text style={{ fontize: 13, fontWeight: "900" }}>{item.text}</Text>
+                        <Text style={tailwind`text-white font-semibold pt-2`}>{item.text}</Text>
                     </View>
                 ))}
             </ScrollView>

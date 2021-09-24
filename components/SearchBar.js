@@ -10,23 +10,26 @@ export default function SearchBar() {
                 placeholder="Search"
                 styles={{
                     textInput: {
-                        backgroundColor: '#eee',
+                        backgroundColor: '#374151',
                         borderRadius: 20,
                         fontWeight: '700',
                         marginTop: 7,
+                        color: '#fff'
                     },
                     textInputContainer: {
-                        backgroundColor: '#eee',
+                        backgroundColor: '#374151',
                         borderRadius: 50,
                         flexDirection: 'row',
                         alignItems: 'center',
-                        marginRight: 10
+                        marginRight: 10,
+                        color: '#fff'
+
                     }
                 }}
                 renderLeftButton={() => {
                     return (
                         <View style={{ marginLeft: 10 }}>
-                            <EvilIcons name="location" size={28} />
+                            <EvilIcons name="location" size={28} color="#f59e0b" />
                         </View>
                     )
                 }}
@@ -35,7 +38,7 @@ export default function SearchBar() {
                         <View style={{
                             flexDirection: 'row',
                             marginRight: 8,
-                            backgroundColor: 'white',
+                            backgroundColor: '#f59e0b',
                             alignItems: 'center',
                             borderRadius: 50,
                             padding: 10
