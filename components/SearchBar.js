@@ -3,15 +3,19 @@ import { View } from 'react-native'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 
-export default function SearchBar() {
+export default function SearchBar({ setCity }) {
     return (
         <View style={{ marginTop: 15, flexDirection: 'row' }}>
             <GooglePlacesAutocomplete
+                query={{ key: "AIzaSyB2Wfv6IK4HBOlEG8fdFzEzaIBpT_QRLmI"}}
+                onPress={(data, details = null) => {
+                    setCity(data.description.split(',')[0])
+                }}
                 placeholder="Search"
                 styles={{
                     textInput: {
                         backgroundColor: '#374151',
-                        borderRadius: 20,
+                        borderRadius: 20, 
                         fontWeight: '700',
                         marginTop: 7,
                         color: '#fff'

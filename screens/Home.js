@@ -11,9 +11,11 @@ const YELP_API_KEY = "NJhlX_R0eEnlk57gW0SGO1SHQqyZhdYBgfu8aM0mKCyq0r3S6gqWn4eUjn
 
 export default function Home() {
     const [restaurantData, setRestaurantData] = useState(localRestaurant)
+    const [city, setCity] = useState('New York')
 
+    // yelp api fetch
     const getRestaurantsFromYelp = () => {
-        const yelpUrl  = 'https://api.yelp.com/v3/businesses/search?term=restaurants&location=Hollywood'
+        const yelpUrl  = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`
 
         const apiOptions = {
             headers: {
@@ -27,13 +29,13 @@ export default function Home() {
     }
     useEffect(() => {
         getRestaurantsFromYelp()
-    }, [])
-    // console.log(restaurantData)
+    }, [city])
+
     return (
         <SafeAreaView style={tailwind`bg-gray-900 pt-12`}>
             <View style={tailwind`bg-gray-900 p-3 pb-4`}>
                 <HeaderTabs />
-                <SearchBar />
+                <SearchBar setCity={setCity}/>
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Categories />
