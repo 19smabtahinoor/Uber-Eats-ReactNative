@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 import tailwind from 'tailwind-react-native-classnames'
-import Categories from '../components/Categories'
-import HeaderTabs from '../components/HeaderTabs'
-import RestaurantItem, { localRestaurant } from '../components/RestaurantItem'
-import SearchBar from '../components/SearchBar'
-import TopTabs from '../components/TopTabs'
+import Categories from '../components/Home/Categories'
+import HeaderTabs from '../components/Home/HeaderTabs'
+import RestaurantItem, { localRestaurant } from '../components/Home/RestaurantItem'
+import SearchBar from '../components/Home/SearchBar'
+import TopTabs from '../components/Home/TopTabs'
 
 const YELP_API_KEY = "NJhlX_R0eEnlk57gW0SGO1SHQqyZhdYBgfu8aM0mKCyq0r3S6gqWn4eUjnYPeKpjB18gRP4yU-Kpt1DMqy-qjaGyR11CL-JL7g-eYNdq-KqY-E4kzpEIN4nG6LtNYXYx"
 
