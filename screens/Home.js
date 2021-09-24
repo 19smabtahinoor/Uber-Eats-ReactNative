@@ -1,17 +1,17 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { SafeAreaView, StyleSheet, View } from 'react-native'
 import HeaderTabs from '../components/HeaderTabs'
+import SearchBar from '../components/SearchBar'
 
 export default function Home() {
     return (
-        <View style={styles.container}>
-            <HeaderTabs />
-        </View>
+        <SafeAreaView style={{ backgroundColor: '#eee', paddingTop: 50 }}>
+            <View style={{ backgroundColor: 'white', padding: 15 }}>
+                <HeaderTabs />
+                <SearchBar />
+            </View>                  
+        </SafeAreaView>
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        paddingTop:50,
-    }
-})
+const styles = StyleSheet.create({})

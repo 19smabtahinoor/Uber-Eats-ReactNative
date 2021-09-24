@@ -16,7 +16,7 @@ export default function HeaderTabs() {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
             />
-        </View>
+        </View> 
     )
 }
 
@@ -26,7 +26,8 @@ const HeaderButton = (props) => {
             backgroundColor: props.activeTab === props.btnText ? 'black' : 'white',
             paddingVertical: 6,
             paddingHorizontal: 16,
-            borderRadius: 30
+            borderRadius: 30,
+            marginHorizontal:5
         }}
             onPress={() => props.setActiveTab(props.btnText)}
         >
