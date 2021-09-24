@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import tailwind from 'tailwind-react-native-classnames';
 
-export default function HeaderTabs() {
-    const [activeTab, setActiveTab] = useState('Delivery');
-
+export default function HeaderTabs(props) {
     return (
         <View style={tailwind`flex flex-row justify-center`}>
             <HeaderButton
                 btnText="Delivery"
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
+                activeTab={props.activeTab}
+                setActiveTab={props.setActiveTab}
             />
             <HeaderButton
                 btnText="Pickup"
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
+                activeTab={props.activeTab}
+                setActiveTab={props.setActiveTab}
             />
         </View>
     )
