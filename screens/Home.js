@@ -10,7 +10,7 @@ import TopTabs from '../components/Home/TopTabs'
 const YELP_API_KEY = "NJhlX_R0eEnlk57gW0SGO1SHQqyZhdYBgfu8aM0mKCyq0r3S6gqWn4eUjnYPeKpjB18gRP4yU-Kpt1DMqy-qjaGyR11CL-JL7g-eYNdq-KqY-E4kzpEIN4nG6LtNYXYx"
 
 
-export default function Home() {
+export default function Home({navigation}) {
     const [restaurantData, setRestaurantData] = useState(localRestaurant)
     const [city, setCity] = useState('New York')
     const [activeTab, setActiveTab] = useState('Delivery')
@@ -41,8 +41,6 @@ export default function Home() {
         <SafeAreaView style={tailwind`bg-gray-900 pt-12`}>
             <View>
                 <TopTabs />
-                {/* <Divider width={1} /> */}
-
             </View>
             <View style={tailwind`bg-gray-900 p-3 pb-4`}>
                 <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -50,7 +48,7 @@ export default function Home() {
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Categories />
-                <RestaurantItem restaurantData={restaurantData} />
+                <RestaurantItem restaurantData={restaurantData} navigation={navigation} />
             </ScrollView>
         </SafeAreaView>
     )

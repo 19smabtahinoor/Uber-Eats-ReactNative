@@ -1,13 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
-import RestaurantDetail from './screens/RestaurantDetail';
-// import Home from './screens/Home';
+import RootNavigation from './Navigation';
 
 export default function App() {
   return (
-    <View>
-      <RestaurantDetail />
-    </View>
+    <RootNavigation />
   );
 }
 

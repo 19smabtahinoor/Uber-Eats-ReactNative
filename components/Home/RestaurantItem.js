@@ -31,7 +31,7 @@ export const localRestaurant = [
         price: "$$",
         reviews: 1244,
         rating: 3.7,
-    },  
+    },
     {
         name: "Benihana",
         image_url:
@@ -61,16 +61,23 @@ export const localRestaurant = [
     }
 ]
 
-export default function RestaurantItem({ restaurantData }) {
+export default function RestaurantItem({ restaurantData, navigation, ...props }) {
     return (
-        <TouchableOpacity activeOpacity={1} style={{ marginTop: 15 }}>
+        <View style={{ marginTop: 15 }}>
             {restaurantData.map(item => (
-                <View style={tailwind`p-2 rounded-lg bg-gray-700 mx-2 my-3`} key={Math.random()}>
+                <TouchableOpacity activeOpacity={1} style={tailwind`p-2 rounded-lg bg-gray-700 mx-2 my-3`} key={Math.random()} onPress={() => navigation.navigate('RestaurantDetail',{
+                    name: item.name,
+                    image: item.image_url,
+                    price:item.price,
+                    rating:item.rating,
+                    reviews:item.review_count,
+                    categories: item.categories
+                })} >
                     <RestaurantImage image={item.image_url} />
                     <RestaurantInfo name={item.name} rating={item.rating} />
-                </View>
+                </TouchableOpacity>
             ))}
-        </TouchableOpacity>
+        </View>
     )
 }
 
